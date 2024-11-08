@@ -80,7 +80,7 @@ def add_meal() -> Response:
     Returns:
         JSON response indicating the success of the combatant addition.
     Raises:
-        400 error if input validation fails.
+        400 error if inp ut validation fails.
         500 error if there is an issue adding the combatant to the database.
     """
     app.logger.info('Creating new meal')

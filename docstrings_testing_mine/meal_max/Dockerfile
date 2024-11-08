@@ -13,6 +13,9 @@ COPY .env /app/.env
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Install curl
+RUN apt update && apt install -y curl
+
 # Install SQLite3
 RUN apt-get update && apt-get install -y sqlite3
 
@@ -25,7 +28,11 @@ RUN chmod +x /app/sql/create_db.sh
 VOLUME ["/app/db"]
 
 # Make port 5000 available to the world outside this container
-EXPOSE 5000
+EXPOSE 5001
+
+
+# Ensure the entrypoint script is executable
+RUN chmod +x /app/entrypoint.sh
 
 # Run the entrypoint script when the container launches
 CMD ["/app/entrypoint.sh"]

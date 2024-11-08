@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from flask import Flask, jsonify, make_response, Response, request
+from flask import Flask, jsonify, make_response, Response, request 
 
 from music_collection.models import song_model
 from music_collection.models.playlist_model import PlaylistModel
